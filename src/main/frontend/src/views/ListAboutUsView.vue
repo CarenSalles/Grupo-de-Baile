@@ -66,7 +66,6 @@ async function deleteThis(id) {
   }).then((response) => {
     if (response.status == 200) {
       alert("Sección borrada correctamente.");
-      location.reload();
     } else {
       alert(
         "Se ha producido un error. \nPor favor, inténtelo de nuevo en unos minutos."

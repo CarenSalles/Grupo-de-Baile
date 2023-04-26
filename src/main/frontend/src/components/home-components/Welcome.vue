@@ -117,6 +117,7 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .sections {
+    width: 90%;
     .associations {
       figure:last-child {
         img {

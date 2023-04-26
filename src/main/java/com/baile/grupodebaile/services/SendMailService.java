@@ -1,5 +1,7 @@
 package com.baile.grupodebaile.services;
 
+import java.util.List;
+
 import com.baile.grupodebaile.models.EmailMessage;
 
 public interface SendMailService {
@@ -8,6 +10,8 @@ public interface SendMailService {
     // Método que pide crear el controlador
     void save(EmailMessage emailMessage);
 
-    EmailMessage listOne(Long id);
+    List<EmailMessage> listAll();
+
+	void delete(Long id);
 
 }
