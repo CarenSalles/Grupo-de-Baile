@@ -6,6 +6,10 @@ const props = defineProps({
     required: true,
   },
 });
+
+function formatDate(date) {
+  return date.split(/[-/]/).reverse().join('-');
+}
 </script>
 <template>
   <div :id="`card-size${event.id}`" class="card-container">
@@ -24,8 +28,9 @@ const props = defineProps({
       />
     </figure>
     <div class="text-container">
-      <span> {{ event.dateevent }}</span>
-      <h4>{{ event.name }}</h4>
+      <h4>{{event.name  }}</h4>
+      <span> {{ formatDate(event.dateevent) }}</span>
+
       <p>
         {{ event.description }}
       </p>

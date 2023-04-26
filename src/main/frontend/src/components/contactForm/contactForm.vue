@@ -7,8 +7,6 @@ let usercontact = {
   inputPhone: "",
   message: "",
 };
-//onReset: Para borrar info de formulario después de enviar, pero no funciona...
-
 
 const router = useRouter();
 
@@ -33,11 +31,9 @@ async function save() {
     return;
   }
 
-  let resultados = {};
-
   const payload = JSON.stringify(usercontact);
   const url = "http://localhost:8080/api/sendemail";
-  const response = fetch(url, {
+  const response = fetch (url, {
     method: "POST",
     body: payload,
     headers: {
@@ -47,9 +43,7 @@ async function save() {
   }).then((response) => {
     if (response.status == 200) {
       alert("Mensaje enviado satisfactoriamente.");
-     
      document.getElementById("formContact").reset()
-
     } else {
       alert(
         "Se ha producido un error. \nPor favor, revise la información introducida en los campos."
@@ -61,12 +55,12 @@ async function save() {
 <template>
   <div  class="container">
     <h1>Contáctanos</h1>
-    <p class="titleDescrip">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-      repellendus dolor consequatur. Vitae animi molestias placeat dolorem
-      doloremque, praesentium, a unde quibusdam suscipit necessitatibus
-      assumenda nostrum ipsa rerum provident tempore!
-    </p>
+    <p class="titleDescrip">Si deseas tener información sobre <strong>como contratarnos para un evento</strong>.<br/>
+Si quieres saber sobre nuestros ensayos: horarios, lugares, qué días...<br/>
+Si quieres inscribirte pata bailar con nosotros y formar parte de nuestra gran familia.<br/>
+O si, simplemente, quieres saber más sobre nosotros...<br/>
+¡Rellena el siguiente formulario y te responderemos en cuanto nos sea posible!<br/><br/>
+<strong>Nota:</strong> También puedes contactarnos a través de nuestros correos xareudochobre@xareudochobre.com (José Palacios) o davidcruces64@gmail.com (David Cruces).</p>
   </div>
   <div class="container d-flex justify-content-center">
     <div id="formStyle">
