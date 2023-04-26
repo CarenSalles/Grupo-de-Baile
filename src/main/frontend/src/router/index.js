@@ -163,6 +163,8 @@ const router = createRouter({
       component: () => import("../views/EditOurTravelsView.vue"),
       meta: { requiresAuth: true },
     },
+
+
     {
       path: "/listacorreos",
       name: "listacorreos",
