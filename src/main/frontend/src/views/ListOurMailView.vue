@@ -44,6 +44,12 @@ async function deletePost(id) {
   }
 }
 
+function consulting(id, mail) {
+  ourMessages.messagesObject = mail;
+  router.push("/modificarnuestroscorreos" + "/" + id);
+}
+
+
 async function deleteThis(id) {
   const response = fetch(`http://localhost:8080/api/listemails/${id}`, {
     method: "DELETE",
@@ -53,7 +59,6 @@ async function deleteThis(id) {
   }).then((response) => {
     if (response.status == 200) {
       alert("Mensaje borrado correctamente.");
-      location.reload();
     } else {
       alert(
         "Se ha producido un error. \nPor favor, inténtelo de nuevo en unos minutos."
@@ -100,12 +105,12 @@ async function deleteThis(id) {
                 </button>
                 <button
                   type="button"
-                  class="btn btn-warning"
+                  class="btn btn-success"
                   @click="
-                    update(ourMessages.id, ourMessages)
+                    consulting(ourMessages.id, ourMessages)
                   "
                 >
-                  Modificar
+                  Consultar
                 </button>
               </p>
             </div>
