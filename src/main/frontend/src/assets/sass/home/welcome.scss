@@ -1,8 +1,11 @@
 @import "../variables";
+h2 {
+  color: $text-red;
+  margin-left: 10px;
+}
 .welcome-container {
   position: relative;
   font-family: $font-text;
-  width: 64%;
   display: flex;
   background-color: white;
   img {
@@ -15,10 +18,6 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    h2 {
-      color: $text-red;
-      margin-left: 10px;
-    }
     p {
       font-size: 15px;
       width: 94%;
@@ -59,7 +58,7 @@
 
 @media (max-width: 768px) {
   .welcome-container {
-    width: 90%;
+    width: 100%;
     img {
       width: 100%;
       aspect-ratio: 1/0.5;

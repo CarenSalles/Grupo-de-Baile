@@ -19,6 +19,7 @@ import { RouterLink } from "vue-router";
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
           <li class="nav-item">
             <RouterLink class="nav-link" to="/listanuestroseventos"
               >Listado de eventos</RouterLink
@@ -28,7 +29,6 @@ import { RouterLink } from "vue-router";
               >Alta de nuevo evento</RouterLink
             >
           </li>
-
           <li class="nav-item">
             <RouterLink class="nav-link" to="/listaviajes"
               >Listado de viajes</RouterLink
@@ -54,6 +54,11 @@ import { RouterLink } from "vue-router";
             <br />
             <RouterLink class="nav-link" to="/registrousuario"
               >Alta de nuevo miembro</RouterLink
+            >
+          </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/listacorreos"
+              >Listado de mensajes</RouterLink
             >
           </li>
         </ul>

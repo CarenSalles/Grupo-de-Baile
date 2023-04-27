@@ -11,6 +11,7 @@ let aboutUsEdit = {
   name: aboutUsToModify.aboutUsObject.name,
   description: aboutUsToModify.aboutUsObject.description,
   id: aboutUsToModify.aboutUsObject.id,
+  position: aboutUsToModify.aboutUsObject.position,
 };
 
 async function update(id) {
@@ -21,6 +22,11 @@ async function update(id) {
 
   if (aboutUsEdit.description === "") {
     alert("Se necesita añadir una descripción a la sección.");
+    return;
+  }
+
+  if (aboutUsEdit.position === "") {
+    alert("Se necesita indicar la posición en el listado.");
     return;
   }
 
@@ -56,8 +62,14 @@ async function update(id) {
           <label for="name" class="form-label">Nombre</label>
           <input v-model="aboutUsEdit.name" id="name" class="form-control" type="text" placeholder="Nombre" />
         </div>
+
         <div class="mb-3">
-          <label for="surname" class="form-label">Apellidos</label>
+          <label for="position" class="form-label">Posición en la página</label>
+          <input v-model="aboutUsEdit.position" id="name" class="form-control" type="text" placeholder="Position" />
+        </div>
+
+        <div class="mb-3">
+          <label for="surname" class="form-label">Descripción</label>
           <textarea v-model="aboutUsEdit.description" id="description" class="form-control" placeholder="Descripción" />
         </div>
       </div>

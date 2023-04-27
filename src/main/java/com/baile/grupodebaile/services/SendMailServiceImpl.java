@@ -1,5 +1,7 @@
 package com.baile.grupodebaile.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -40,6 +42,16 @@ public class SendMailServiceImpl implements SendMailService {
 
     public void save(EmailMessage emailNew) {
         emailRepository.save(emailNew);
+    }
+
+    @Override
+    public List<EmailMessage> listAll() {
+        return emailRepository.findAll();
+    }
+
+    @Override
+    public void delete(Long id) {
+        emailRepository.deleteById(id);
     }
 
 }
